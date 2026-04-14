@@ -5,6 +5,21 @@
     "modules-center": ["clock"],
     "modules-right": ["network", "pulseaudio", "cpu", "memory"],
 
+    "hyprland/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		"1": "󰋜 Home",
+		"2": "󰌞 Work",
+	},
+
+	"persistent-workspaces": {
+        "1": [],
+        "2": []  
+        },
+
+	"default": ""
+    },
+
     "clock": {
         "format": "󰥔 {:%H:%M %d/%m/%Y}"
     },
@@ -18,7 +33,18 @@
     },
 
     "pulseaudio": {
-        "format": "󰕾 {volume}%"
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
     },
 
     "network": {
